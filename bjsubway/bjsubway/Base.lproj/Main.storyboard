@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="subway_map" id="vYM-C2-O6i">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XBl-oI-wfJ" appends="YES" id="daA-hb-cFC"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleAspectFit" id="rbY-vI-oz2" customClass="MarkView">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vB7-yr-13o">
+                                        <rect key="frame" x="546" y="173" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nf7-FM-tI2" kind="modal" identifier="query" id="dhe-WK-GNh"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" id="dKz-dd-ecz">
+                                        <rect key="frame" x="284" y="20" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="8bx-ur-F8k">
+                                        <rect key="frame" x="348" y="24" width="123" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.8096998063879588" blue="0.0026427606374681556" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="关闭"/>
+                                            <segment title="更多"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onSelectStation:" destination="vXZ-lx-hvc" eventType="valueChanged" id="NV9-D1-lHa"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" id="SwM-U0-eZ0">
+                                        <rect key="frame" x="124" y="22" width="140" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.80969980640000006" blue="0.0026427606370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="选为出发地"/>
+                                            <segment title="选为目的地"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onSelectEnd:" destination="vXZ-lx-hvc" eventType="valueChanged" id="y6u-Zh-mrL"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="fEs-l7-YJt">
+                                        <rect key="frame" x="173" y="-50" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="Pzi-CG-dmY"/>
+                                        </connections>
+                                    </adBannerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="5VT-9S-TLm">
+                                <rect key="frame" x="534" y="23" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.80969980640000006" blue="0.0026427606370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onZoomed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="GAv-25-fsq"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XBl-oI-wfJ" appends="YES" id="3gN-Lj-Ky2"/>
+                            <outletCollection property="gestureRecognizers" destination="a2P-Zv-Kcq" appends="YES" id="h1r-J1-Qe4"/>
+                            <outletCollection property="gestureRecognizers" destination="YW6-WV-ahF" appends="YES" id="cn0-YM-mfs"/>
+                        </connections>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="667" height="375"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="667" height="375"/>
+                    <connections>
+                        <outlet property="End" destination="SwM-U0-eZ0" id="TFx-9O-xiq"/>
+                        <outlet property="Flag" destination="dKz-dd-ecz" id="gRm-MZ-eft"/>
+                        <outlet property="adBanner" destination="fEs-l7-YJt" id="Gp6-fq-pOU"/>
+                        <outlet property="imageView" destination="vYM-C2-O6i" id="qYU-0Q-MiP"/>
+                        <outlet property="mkView" destination="rbY-vI-oz2" id="E8M-0I-16W"/>
+                        <outlet property="panRecognizer" destination="a2P-Zv-Kcq" id="1wz-7U-V4t"/>
+                        <outlet property="pinchRecognizer" destination="YW6-WV-ahF" id="Lqa-XR-b8k"/>
+                        <outlet property="pointSelector" destination="8bx-ur-F8k" id="c4O-Cj-2gO"/>
+                        <outlet property="stepper" destination="5VT-9S-TLm" id="nvG-T8-IUt"/>
+                        <outlet property="tapRecognizer" destination="XBl-oI-wfJ" id="xOZ-TL-ani"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="YW6-WV-ahF">
+                    <connections>
+                        <action selector="onPinched:" destination="vXZ-lx-hvc" id="QzF-EB-rsD"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <tapGestureRecognizer id="XBl-oI-wfJ">
+                    <connections>
+                        <action selector="onTapped:" destination="vXZ-lx-hvc" id="U6M-z3-JPQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="a2P-Zv-Kcq">
+                    <connections>
+                        <action selector="onDragged:" destination="vXZ-lx-hvc" id="TIG-S7-1YY"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="74.5" y="320.5"/>
+        </scene>
+        <!--Query View Controller-->
+        <scene sceneID="b3R-Gd-glL">
+            <objects>
+                <viewController id="Nf7-FM-tI2" customClass="QueryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="aKx-LK-bIU">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zola" id="sed-Ee-Wlc">
+                                <rect key="frame" x="482" y="190" width="185" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="XLy-f5-m5e">
+                                <rect key="frame" x="192" y="25" width="335" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y0d-lr-5B3">
+                                <rect key="frame" x="23" y="69" width="142" height="142"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93351483589999995" green="0.41826696790000001" blue="0.082446134490000003" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="0C8-Cv-N3O"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="q3C-b4-e6f">
+                                <rect key="frame" x="173" y="12" width="354" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lke-hE-ncZ">
+                                        <rect key="frame" x="142" y="23" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="P87-2X-Vhn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HAK-S7-MN5">
+                                        <rect key="frame" x="240" y="23" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="sCq-3Q-V5N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="13K-ug-oo4">
+                                        <rect key="frame" x="42" y="23" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="TM9-p1-ddP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公里数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yxz-C0-AWm">
+                                        <rect key="frame" x="244" y="8" width="80" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起点" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1nh-r4-HHR">
+                                        <rect key="frame" x="46" y="8" width="80" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="途经站数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bSP-6P-goK">
+                                        <rect key="frame" x="127" y="8" width="109" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kg5-hL-9A6">
+                                        <rect key="frame" x="40" y="184" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="OJf-TR-59A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XVK-ec-yzb">
+                                        <rect key="frame" x="140" y="184" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="MXH-dY-lEv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mC3-gc-TDn">
+                                        <rect key="frame" x="238" y="184" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onInformation:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="tAe-7D-SmH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q6s-6B-qtn">
+                                        <rect key="frame" x="146" y="169" width="77" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计到达" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XTW-6d-hE5">
+                                        <rect key="frame" x="232" y="169" width="100" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="票价" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HwX-sr-9Fr">
+                                        <rect key="frame" x="44" y="169" width="80" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dG4-6L-UpV">
+                                <rect key="frame" x="563" y="79" width="88" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93351483585858586" green="0.41811633072915838" blue="0.08157809293115427" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" red="0.52043876262626265" green="0.18574686909737001" blue="0.12944225135209869" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBack:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="7R8-Og-N93"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="HQh-bE-fST">
+                                <rect key="frame" x="331" y="292" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="currentPageIndicatorTintColor" red="0.93351483589999995" green="0.41826696790000001" blue="0.082446134490000003" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" id="9Ge-Eo-DSD">
+                                <rect key="frame" x="279" y="320" width="142" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segments>
+                                    <segment title="&lt;&lt;向前"/>
+                                    <segment title="向后&gt;&gt;"/>
+                                </segments>
+                                <color key="tintColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onNavigated:" destination="Nf7-FM-tI2" eventType="valueChanged" id="p3c-md-4ux"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2iz-ni-3GQ">
+                                <rect key="frame" x="482" y="247" width="185" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onZola:" destination="Nf7-FM-tI2" eventType="touchUpInside" id="hO7-Ue-IZy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看出口信息请点击这里➡️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ey8-Nl-3kU">
+                                <rect key="frame" x="311" y="354" width="396" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.52043876259999999" green="0.20484588870000001" blue="0.14113221719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="终点" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sfv-w2-pXb">
+                                <rect key="frame" x="23" y="49" width="142" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.43863480230000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.77335948200000004" blue="0.29315918159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jPU-Dd-Gpm" appends="YES" id="KMh-Se-n0K"/>
+                            <outletCollection property="gestureRecognizers" destination="aZ8-NA-X99" appends="YES" id="iLP-Ax-sNR"/>
+                        </connections>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="667" height="375"/>
+                    <connections>
+                        <outlet property="arriveTime" destination="mC3-gc-TDn" id="GpY-vQ-3ef"/>
+                        <outlet property="basicInfoView" destination="q3C-b4-e6f" id="pMN-lr-Qx3"/>
+                        <outlet property="dest" destination="y0d-lr-5B3" id="3Au-Fs-E7x"/>
+                        <outlet property="goBack" destination="dG4-6L-UpV" id="gRk-Ha-oZ9"/>
+                        <outlet property="kilometers" destination="HAK-S7-MN5" id="MyY-Hj-w0J"/>
+                        <outlet property="pageNav" destination="9Ge-Eo-DSD" id="nys-EH-rNP"/>
+                        <outlet property="poiText" destination="XLy-f5-m5e" id="4Qp-SQ-AcW"/>
+                        <outlet property="priceOfTicket" destination="kg5-hL-9A6" id="GCB-14-6MR"/>
+                        <outlet property="resultPage" destination="HQh-bE-fST" id="niV-RL-0It"/>
+                        <outlet property="rightswapGesture" destination="aZ8-NA-X99" id="jeA-Vw-whf"/>
+                        <outlet property="source" destination="13K-ug-oo4" id="F9T-FY-GIS"/>
+                        <outlet property="stations" destination="lke-hE-ncZ" id="dca-jx-7Sg"/>
+                        <outlet property="swapGesture" destination="jPU-Dd-Gpm" id="Hzl-IK-coa"/>
+                        <outlet property="timeForTrip" destination="XVK-ec-yzb" id="4op-KJ-Oqq"/>
+                        <outlet property="zola" destination="sed-Ee-Wlc" id="2bg-gU-5zi"/>
+                        <outlet property="zolaInfo" destination="ey8-Nl-3kU" id="Yf2-9r-7ZF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBl-6R-Ofu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="jPU-Dd-Gpm">
+                    <connections>
+                        <action selector="onSwipe:" destination="Nf7-FM-tI2" id="j85-Zc-G04"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="aZ8-NA-X99">
+                    <connections>
+                        <action selector="onSwipe:" destination="Nf7-FM-tI2" id="fxe-1b-9lD"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="763.5" y="320.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flag" width="80" height="80"/>
+        <image name="subway_map" width="1900" height="1301"/>
+        <image name="zola" width="185" height="185"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

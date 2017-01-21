@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="24" tilewidth="128" tileheight="128">
+ <tileset firstgid="1" source="desert@4.tsx"/>
+ <tileset firstgid="81" name="maptiles" tilewidth="128" tileheight="128">
+  <image source="maptiles.png" width="896" height="512"/>
+ </tileset>
+ <layer name="background" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztlMsKg0AMRaO2itb6hBZ1ZbtS////vIMzKGG2k1k4gbO4EDiLhJsSUeaRCtR0zABGMAlk4736Z/ADf4Fs8y9gBZtA5n7pu7+Z3xfG/wBfQZ7M34AIxCDR93KZ+f2VPwcFeOl9l9nmb0EHer3vMnN/Sff+f8nft/2/mtD/of9D/4f+v1P/f+j8BR/sGz4tEQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="32" height="24">
+  <object name="1" x="459" y="196" width="247" height="246"/>
+  <object name="2" x="971" y="196" width="245" height="248"/>
+  <object name="3" x="1478" y="204" width="249" height="249"/>
+  <object name="4" x="1999" y="201" width="233" height="241"/>
+  <object name="5" x="2507" y="198" width="250" height="252"/>
+  <object name="6" x="3014" y="197" width="251" height="252"/>
+  <object name="7" x="3532" y="199" width="245" height="250"/>
+  <object name="8" x="3520" y="961" width="245" height="252"/>
+  <object name="9" x="3012" y="960" width="249" height="250"/>
+  <object name="SpawnPoint" x="158" y="663" width="76" height="62"/>
+  <object name="10" x="2499" y="962" width="249" height="250"/>
+  <object name="11" x="1987" y="960" width="249" height="250"/>
+  <object name="12" x="1474" y="962" width="249" height="250"/>
+  <object name="13" x="963" y="959" width="249" height="250"/>
+  <object name="14" x="450" y="957" width="249" height="250"/>
+  <object name="15" x="452" y="1733" width="249" height="250"/>
+  <object name="16" x="966" y="1733" width="249" height="250"/>
+  <object name="17" x="1478" y="1727" width="249" height="250"/>
+  <object name="18" x="1983" y="1733" width="249" height="250"/>
+  <object name="19" x="2504" y="1731" width="249" height="250"/>
+  <object name="20" x="3016" y="1734" width="249" height="250"/>
+  <object name="21" x="3524" y="1740" width="249" height="250"/>
+  <object name="28" x="3532" y="2509" width="249" height="250"/>
+  <object name="27" x="3014" y="2503" width="249" height="250"/>
+  <object name="26" x="2497" y="2505" width="249" height="250"/>
+  <object name="25" x="1992" y="2503" width="249" height="250"/>
+  <object name="24" x="1479" y="2498" width="249" height="250"/>
+  <object name="23" x="963" y="2504" width="249" height="250"/>
+  <object name="22" x="455" y="2493" width="249" height="250"/>
+ </objectgroup>
+ <layer name="moster" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt0icOwFAQA9F/xfRelZ7cH4dGA1fKIg97zMAhqG8RHMMJnMIZnMOFZZRSTpVwBddwAy8w/79aRinl1ACP8ATPcAt3cG/YpJRXG7zDB3zCF3zDj2WU+q0XnwMKSg==
+  </data>
+ </layer>
+</map>

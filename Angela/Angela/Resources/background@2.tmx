@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="64" height="48" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" source="desert@2.tsx"/>
+ <layer name="background" width="64" height="48">
+  <data encoding="base64" compression="zlib">
+   eJztzzEOwlAMRMEEqkAFHCCpgAq4/+lwYZ8ghSP9Gen1u9MEAAAAAAAAAIxujk7RuXtIkyW6RNfuIU1u0T16dA8B2OGZlVdW3ln5ZuWXlTUrW1Y+2VGM/h8ARvEHdDoFXw==
+  </data>
+ </layer>
+ <layer name="pave" width="64" height="48">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEOgEAIBEAq7bxO7/8vlfvDRWKYSbaGbSACAAAAAAAAAAD6ujNjQzrTvzf9ax2Zs3B+df8r9tzwv97/9cOezCzeA4DvvKMRA6E=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="64" height="48">
+  <object name="1" x="194" y="2496" width="128" height="128"/>
+  <object name="2" x="446" y="2497" width="128" height="128"/>
+  <object name="3" x="708" y="2492" width="128" height="128"/>
+  <object name="4" x="961" y="2498" width="128" height="128"/>
+  <object name="5" x="1217" y="2497" width="128" height="128"/>
+  <object name="6" x="1479" y="2496" width="128" height="128"/>
+  <object name="7" x="1730" y="2497" width="128" height="128"/>
+  <object name="8" x="1983" y="2495" width="128" height="128"/>
+  <object name="9" x="1025" y="2039" width="190" height="196"/>
+  <object name="SpawnPoint" x="131" y="2633" width="56" height="44"/>
+ </objectgroup>
+</map>
