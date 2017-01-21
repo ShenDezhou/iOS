@@ -1,7 +1,0 @@
-
-
-
-
-@interface CAEAGLLayer (RetainedBacking)
-
-@end
